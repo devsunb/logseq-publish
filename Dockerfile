@@ -1,8 +1,4 @@
-# > step 1: Initializa running environment 
-ARG LOGSEQ_TAG
-FROM ghcr.io/pengx17/logseq-base:${LOGSEQ_TAG} as logseq
-
-# > stpe 2: Remove useless dependencies to build slim docker image
+FROM logseq
 FROM mcr.microsoft.com/playwright:focal
 
 ENV LOGSEQ_THEME=${LOGSEQ_THEME:-"light"}
